@@ -1,0 +1,26 @@
+version: '2'
+services:
+  db:
+    restart: always
+    image: postgres:9.4
+    ports: 
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=portabilis
+      - POSTGRES_PASSWORD=portabilis
+
+  development:
+    image: portabilis_development
+    depends_on:
+      - db
+    build: ./env
+    links:
+      - "db:portabilis.db"
+    ports:
+      - "80:80"
+    hostname: "portabilis"
+    volumes:
+      - $PWD/env/bash.bashrc:/deploy/.bashrc
+      - $HOME/.ssh:/deploy/.ssh
+      - ./:/var/www/portabilis
+      - $HOME/.gitconfig:/deploy/.gitconfig
