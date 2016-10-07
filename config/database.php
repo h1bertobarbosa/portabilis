@@ -72,7 +72,7 @@ return [
             'port' => env('DB_PORT', '5432'),
             'database' => env('DB_DATABASE', 'd3ju42u3imb9gp'),
             'username' => env('DB_USERNAME', 'qilnmpiihxuwyv'),
-            'password' => env('DB_PASSWORD', 'zQJJwCThiqY4F36oriNjCxXJ'),
+            'password' => env('DB_PASSWORD', 'zQJJwCThiqY4F36oriNjCxXJ-C'),
             'charset' => 'utf8',
             'prefix' => '',
             'schema' => 'public',
